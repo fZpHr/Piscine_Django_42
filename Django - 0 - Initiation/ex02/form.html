@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+        color: white;
+        background-image: url('https://auth.42.fr/auth/resources/yyzrk/login/staff/img/bkgrnd.jpg');
+        }
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+    ol {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between
+        }
+    .student {
+        margin: 10px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    input[type="checkbox"] {
+         margin-left: 30px;
+    }
+    .submit {
+        justify-content: center;
+    }
+  </style>
+</head>
+<body>
+<script src="popup.js"></script>
+<form id="form" method="post">
+
+    <ol>
+      <li>
+        <label for="firstname">Firstname&nbsp;:&nbsp;&nbsp;</label>
+        <input type="text" id="firstname" name="user_firstname" />
+      </li>
+      <li>
+        <label for="name">Name&nbsp;:</label>
+        <input type="text" id="name" name="user_name" />
+      </li>
+      <li>
+        <label for="age">Age&nbsp;:</label>
+        <input type="number" id="age" name="user_age" />
+      </li>
+      <li>
+        <label for="phone">Phone&nbsp;:</label>
+        <input type="tel" id="phone" name="user_phone" />
+      </li>
+      <li>
+        <label for="email">Email&nbsp;:</label>
+        <input type="email" id="email" name="user_mail" />
+      </li>
+      <li class="student">
+        <label for="student">Student at 42 ?&nbsp;:</label>
+        <input type="checkbox" id="student" name="user_student" />
+      </li>
+      <li>
+        <label for="gender_male">Male</label>
+        <input type="radio" id="gender_male" name="user_gender" value="Male">
+        <label for="gender_female">Female</label>
+        <input type="radio" id="gender_female" name="user_gender" value="Female">
+        <label for="gender_other">Other</label>
+        <input type="radio" id="gender_other" name="user_gender" value="Other">
+      </li>
+      <li class="submit">
+        <input type="submit" value="Submit">
+        </li>
+    </ol>
+  </form>
+  
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event){
+      event.preventDefault();
+      displayFormContents();
+    });
+  </script>
