@@ -1,20 +1,18 @@
 import sys
 
-states = {
-"Oregon" : "OR",
-"Alabama" : "AL",
-"New Jersey": "NJ",
-"Colorado" : "CO"
-}
-
-capital_cities = {
-"OR": "Salem",
-"AL": "Montgomery",
-"NJ": "Trenton",
-"CO": "Denver"
-}
-
 def state(argv):
+    states = {
+    "Oregon" : "OR",
+    "Alabama" : "AL",
+    "New Jersey": "NJ",
+    "Colorado" : "CO"
+    }
+    capital_cities = {
+    "OR": "Salem",
+    "AL": "Montgomery",
+    "NJ": "Trenton",
+    "CO": "Denver"
+    }
     argv = argv.lower().title()
     for key, value in capital_cities.items():
         if value == argv:
@@ -24,6 +22,18 @@ def state(argv):
     return None
 
 def capital_city(argv):
+    states = {
+    "Oregon" : "OR",
+    "Alabama" : "AL",
+    "New Jersey": "NJ",
+    "Colorado" : "CO"
+    }
+    capital_cities = {
+    "OR": "Salem",
+    "AL": "Montgomery",
+    "NJ": "Trenton",
+    "CO": "Denver"
+    }
     argv = argv.lower().title()
     if argv in states:
         return capital_cities[states[argv]].lower().title()
