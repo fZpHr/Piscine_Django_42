@@ -1,2 +1,75 @@
-<p>"-Who are you?
--A {name}!"</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CV en HTML</title>
+        <style>
+            h1 {
+                text-align: center;
+                color: rgb(15, 255, 7);
+            }
+            h2 {
+                color: rgb(15, 255, 7);
+            }
+            p {
+                font-weight: bold;
+                color: rgb(255, 153, 0);
+            }
+            ol {
+                font-weight: bold;
+                color: rgb(255, 153, 0);
+            }
+            ul {
+                font-weight: bold;
+                color: rgb(255, 153, 0);
+            }
+            table {
+                border-collapse: collapse;
+            }
+            th, td {
+                font-weight: bold;
+                border: 5px solid rgb(228, 31, 31);
+                color: rgb(255, 153, 0);
+                padding: 8px;
+                text-align: left;
+                background-color: aqua;
+            }
+            body {
+                background-image: url('https://ih0.redbubble.net/image.4321393839.7008/raf,360x360,075,t,fafafa:ca443f4786.jpg');
+                background-repeat: repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            table tr td:last-child {
+                border: 5px solid #424242;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CV Mr. {name}</h1>
+        <h2>Informations personnelles</h2>
+            <p>Nom: {name}</p>
+            <p>Prénom: {forename}</p>
+            <p>Age: {age}</p>
+        <h2>Formations</h2>
+        <ol>
+            <li>2042: {diplome}</li>
+            <li>2042: {diplome2}</li>
+        </ol>
+        <h2>Expériences professionnelles</h2>
+        <ul>
+            <li>2042: {experience}</li>
+        </ul>
+        <table>
+            <tr>
+                <th> Centres d'intérêt </th>
+                <th> Compétences</th>
+            </tr>
+            <tr>
+                <td>{skill}</td>
+                <td>{skill2}</td>
+            </tr>
+        </table>
+        
+
+    </body>
+</html>

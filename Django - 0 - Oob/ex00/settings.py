@@ -1,1 +1,8 @@
 name = "duoquadragintian"
+forename = "BoTrian"
+age = "42"
+diplome = "Baccalauréat S"
+diplome2 = "7 ans de prépa math"
+experience = "7 ans de stage lors de la prépa math"
+skill = "La survie"
+skill2 = "Capacité à survivre à la prépa math"
