@@ -12,22 +12,36 @@ class Text(str):
         """
         Do you really need a comment to understand this method?..
         """
-        return super().__str__().replace('\n', '\n<br />\n')
+        return super().__str__().replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace('\n', '\n<br />\n')
 
 
 class Elem:
     """
     Elem will permit us to represent our HTML elements.
     """
-    [...]
+    class ValidationError(Exception):
+        def __init__(self):
+            super().__init__('ValidationError')
 
-    def __init__(self, tag='div', attr={}, content=None, tag_type='double'):
+    def __init__(self, tag: str='div', attr: dict={}, content=None, tag_type: str ='double'):
         """
         __init__() method.
 
         Obviously.
         """
-        [...]
+        self.tag = tag
+        self.attr = attr
+        self.content = []
+        if self.check_type(content) or content is None:
+            if type(content) == list:
+                self.content = content
+            elif content is not None:
+                self.content.append(content)
+            if tag_type not in ['double', 'simple']:
+                raise self.ValidationError
+            self.tag_type = tag_type
+        else:
+            raise self.ValidationError
 
     def __str__(self):
         """
@@ -36,10 +50,11 @@ class Elem:
         Make sure it renders everything (tag, attributes, embedded
         elements...).
         """
+        result = '<' + self.tag + self.__make_attr()
         if self.tag_type == 'double':
-            [...]
+            result += '>' + self.__make_content() + '</' + self.tag + '>'
         elif self.tag_type == 'simple':
-            [...]
+            result += ' />'
         return result
 
     def __make_attr(self):
@@ -55,14 +70,18 @@ class Elem:
         """
         Here is a method to render the content, including embedded elements.
         """
-
         if len(self.content) == 0:
             return ''
         result = '\n'
         for elem in self.content:
-            result += [...]
+            if len(str(elem)) != 0:
+                result += f"{elem}\n"
+        result = "  ".join(line for line in result.splitlines(True))
+        if not len(result.strip()):
+            return ''
+        print("------------------")
         return result
-
+    
     def add_content(self, content):
         if not Elem.check_type(content):
             raise Elem.ValidationError
@@ -82,6 +101,17 @@ class Elem:
                                                 isinstance(elem, Elem)
                                                 for elem in content])))
 
+def main():
+    html = Elem('html', content=[
+                Elem('head', content=Elem(
+                    'title', content=Text('"Hello ground!"'))),
+                Elem('body', content=[Elem('h1', content=Text('"Oh no, not again!"')),
+                                      Elem('img', {'src': 'http://i.imgur.com/pfp3T.jpg'}, tag_type='simple')])])
+    print(html)
+    
+
+
+
 
 if __name__ == '__main__':
-    [...]
+    main()
