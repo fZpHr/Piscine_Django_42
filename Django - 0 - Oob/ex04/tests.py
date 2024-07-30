@@ -120,12 +120,6 @@ if __name__ == '__main__':
     try :
         test()
         print('Tests succeeded!')
-        result = "\nsalut\n a\n tous\n    \n"
-        result = "  ".join(line for line in result.splitlines(True))
-        content = "\nsalut\n a\n tous\n   \n"
-        content = content.replace('\n', '\n  ')
-        print(result)
-        print(content)
     except AssertionError as e:
         traceback.print_exc()
         print(e)
