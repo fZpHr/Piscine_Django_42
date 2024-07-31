@@ -1,130 +1,88 @@
-from elem import Elem
+from elem import *
 
 class Html(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='html', attr={}, content=content, tag_type='double')
-    
-    def __str__(self): 
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='html', content=content, attr=kwargs, tag_type='double')
 
 class Head(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='head', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='head', content=content, attr=kwargs, tag_type='double')
 
 class Body(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='body', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='body', content=content, attr=kwargs, tag_type='double')
 
 class Title(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='title', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='title', content=content, attr=kwargs, tag_type='double')
 
 class Meta(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='meta', attr={}, content=content, tag_type='simple')
-    def __str__(self):
-        return super().__str__()
-    
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='meta', content=content, attr=kwargs, tag_type='simple')
+
 class Img(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='img', attr={}, content=content, tag_type='simple')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='img', content=content, attr=kwargs, tag_type='simple')
 
 class Table(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='table', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='table', content=content, attr=kwargs, tag_type='double')
 
 class Th(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='th', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='th', content=content, attr=kwargs, tag_type='double')
 
 class Tr(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='tr', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='tr', content=content, attr=kwargs, tag_type='double')
 
 class Td(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='td', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='td', content=content, attr=kwargs, tag_type='double')
 
 class Ul(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='ul', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='ul', content=content, attr=kwargs, tag_type='double')
 
 class Ol(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='ol', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='ol', content=content, attr=kwargs, tag_type='double')
 
 class Li(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='li', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='li', content=content, attr=kwargs, tag_type='double')
 
 class H1(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='h1', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
-    
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='h1', content=content, attr=kwargs, tag_type='double')
+
 class H2(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='h2', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='h2', content=content, attr=kwargs, tag_type='double')
 
 class P(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='p', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='p', content=content, attr=kwargs, tag_type='double')
 
 class Div(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='div', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='div', content=content, attr=kwargs, tag_type='double')
 
 class Span(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='span', attr={}, content=content, tag_type='double')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='span', content=content, attr=kwargs, tag_type='double')
 
 class Hr(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='hr', attr={}, content=content, tag_type='simple')
-    def __str__(self):
-        return super().__str__()
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='hr', content=content, attr=kwargs, tag_type='simple')
 
 class Br(Elem):
-    def __init__(self, content=None):
-        super().__init__(tag='br', attr={}, content=content, tag_type='simple')
-    def __str__(self):
-        return super().__str__()
-
+    def __init__(self, content=None, **kwargs):
+        super().__init__(tag='br', content=content, attr=kwargs, tag_type='simple')
 
 
 if __name__ == '__main__':
     try:
-        print(Html( [Head([Title('Hello ground!')]), Body()] ))
+        print(Html([Head(Title(Text("Hello ground!"))), Body([H1(Text("Oh no, not again!")), Img(src='http://i.imgur.com/pfp3T.jpg')])]))
     except Exception as e:
-        print(e)    
+        print(e)
